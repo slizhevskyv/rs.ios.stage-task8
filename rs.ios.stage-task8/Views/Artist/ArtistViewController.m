@@ -202,6 +202,7 @@ typedef enum {
     self.canvas.isReadyToDraw = YES;
     self.canvas.colors = [self.currentPaletteColors copy];
     self.canvas.templateName = self.currentDrawing;
+//    self.canvas.templateName = @"Landscape";
     
     double timeInterval = (double)1/60 * (double)self.timerValue;
     self.state = draw;
@@ -209,7 +210,6 @@ typedef enum {
 }
 
 -(void)shareHandler:(Button *)sender {
-//    NSLog(@"%@", [self.canvas takeSnapshot]);
     NSLog(@"Share handler");
     UIImageWriteToSavedPhotosAlbum([self.canvas takeSnapshot], nil, nil, nil);
 }
