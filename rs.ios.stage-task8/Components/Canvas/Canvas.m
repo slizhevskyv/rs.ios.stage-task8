@@ -959,7 +959,6 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    NSLog(@"Called");
     if (self.reset) {
         return [self resetPaths];
     }
