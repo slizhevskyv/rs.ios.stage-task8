@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL reset;
 
 -(UIImage *)takeSnapshot;
+-(void) drawWithInterval:(double) interval andCallback:(void (^)(void)) callback;
 
 @end
 

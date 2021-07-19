@@ -11,6 +11,7 @@
 #import "TimerViewController.h"
 #import "UILabel+WithTitleAndColor.h"
 #import "UIColor+WithPalleteColors.h"
+#import "NSMutableArray+Shuffle.h"
 #import "Button.h"
 #import "Canvas.h"
 
@@ -27,7 +28,6 @@ typedef enum {
 @property (nonatomic, assign) float timerValue;
 @property (nonatomic, strong) NSArray<Button *> *controlButtons;
 @property (nonatomic, assign) ArtistViewState state;
-@property (nonatomic, weak) NSTimer *timer;
 
 @property (nonatomic, strong) Canvas *canvas;
 @end
@@ -200,29 +200,25 @@ typedef enum {
 
 -(void)drawHandler:(Button *)sender {
     self.canvas.isReadyToDraw = YES;
+    [self.currentPaletteColors shuffle];
     self.canvas.colors = [self.currentPaletteColors copy];
     self.canvas.templateName = self.currentDrawing;
-//    self.canvas.templateName = @"Landscape";
+    
     
     double timeInterval = (double)1/60 * (double)self.timerValue;
+
     self.state = draw;
-    [NSTimer scheduledTimerWithTimeInterval:timeInterval target:self selector:@selector(drawTimer:) userInfo:nil repeats:YES];
+    [self.canvas drawWithInterval:timeInterval andCallback:^{
+        self.state = done;
+    }];
 }
 
 -(void)shareHandler:(Button *)sender {
-    NSLog(@"Share handler");
-    UIImageWriteToSavedPhotosAlbum([self.canvas takeSnapshot], nil, nil, nil);
-}
-
-- (void)drawTimer:(NSTimer *)timer {
-    if (self.canvas.isDrawingDone) {
-        [timer invalidate];
-        self.state = done;
-        
-        return;
-    }
+    UIImage *image = [self.canvas takeSnapshot];
     
-    [self.canvas setNeedsDisplay];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 #pragma mark Drawing VC Delegate methods

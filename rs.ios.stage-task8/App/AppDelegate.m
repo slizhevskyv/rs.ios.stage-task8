@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "ArtistViewController.h"
+#import "UIColor+WithPalleteColors.h"
 
 @interface AppDelegate ()
 
@@ -17,15 +18,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    
-//    ArtistViewController *artistVC = [[ArtistViewController alloc] init];
-//    
-//    window.rootViewController = artistVC;
-//    
-//    self.window = window;
-//    
-//    [self.window makeKeyAndVisible];
+    UIFont *font = [UIFont fontWithName:@"Montserrat" size:17];
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor lightGreenSea]];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+        NSFontAttributeName: font
+    } forState:UIControlStateNormal];
+    [[UILabel appearance] setFont:font];
+    [[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setFont:font];
+    [[UISlider appearance] setTintColor:[UIColor lightGreenSea]];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    ArtistViewController *artistVC = [[ArtistViewController alloc] init];
+    UINavigationController *rootVC = [[UINavigationController alloc] initWithRootViewController:artistVC];
+    
+    window.rootViewController = rootVC;
+    
+    self.window = window;
+    
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
