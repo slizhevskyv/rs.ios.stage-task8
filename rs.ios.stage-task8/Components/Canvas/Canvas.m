@@ -9,12 +9,12 @@
 
 @interface Canvas ()
 
-@property (nonatomic) UIBezierPath *firstPath;
-@property (nonatomic) UIBezierPath *secondPath;
-@property (nonatomic) UIBezierPath *thirdPath;
+@property (nonatomic, assign) double drawInterval;
+@property (nonatomic, strong) NSArray<CAShapeLayer *> *shapeLayers;
+@property (nonatomic, strong) NSArray<UIBezierPath *> *bezierPaths;
+@property (nonatomic, copy) void (^drawEndHandler)(void);
 @property (nonatomic, assign) NSInteger coordinatesIdx;
 @property (nonatomic, strong) NSDictionary<NSString *, NSArray<NSMutableArray<NSNumber *> *> *> *templates;
-@property (nonatomic, assign, readwrite) BOOL isDrawingDone;
 @property (nonatomic, assign) BOOL isCoordinatesNormalized;
 
 @end
@@ -26,13 +26,11 @@
     self = [super init];
     if (self) {
         _isReadyToDraw = NO;
-        _isDrawingDone = NO;
         _isCoordinatesNormalized = NO;
         _reset = NO;
         _coordinatesIdx = 1;
-        _firstPath = [UIBezierPath new];
-        _secondPath = [UIBezierPath new];
-        _thirdPath = [UIBezierPath new];
+        _bezierPaths = @[[UIBezierPath new], [UIBezierPath new], [UIBezierPath new]];
+        _shapeLayers = @[[CAShapeLayer layer], [CAShapeLayer layer], [CAShapeLayer layer]];
         _colors = @[];
         _templates = @{
             @"Planet": @[
@@ -973,59 +971,28 @@
         [self normalizeCoordinates:coordinates];
     }
 
-    if (self.coordinatesIdx == [[coordinates firstObject] count]) {
-        [self strokePaths];
-        self.isDrawingDone = YES;
-        return;
+    while (self.coordinatesIdx != [[coordinates firstObject] count]) {
+        for (int idx = 0; idx < [self.bezierPaths count]; idx++) {
+            UIBezierPath *path = [UIBezierPath new];
+            NSArray *pathCoordinates = coordinates[idx];
+
+            [self setCoordinatesForLinePath:path
+                                coordinates:[pathCoordinates objectAtIndex:self.coordinatesIdx]
+                                prevCoordinates:[pathCoordinates objectAtIndex:self.coordinatesIdx - 1]
+                                justMoveTo:[pathCoordinates[self.coordinatesIdx][2] boolValue]];
+            
+            [self.bezierPaths[idx] appendPath:path];
+        }
+        self.coordinatesIdx++;
     }
-
-    UIBezierPath *firstLinePath = [UIBezierPath new];
-    UIBezierPath *secondLinePath = [UIBezierPath new];
-    UIBezierPath *thirdLinePath = [UIBezierPath new];
-
-    NSArray *firstCoords = [coordinates firstObject];
-    NSArray *secondCoords = [coordinates objectAtIndex:1];
-    NSArray *thirdCoords = [coordinates lastObject];
     
-    BOOL p1JustMoveTo = [[[firstCoords objectAtIndex:self.coordinatesIdx] objectAtIndex:2] boolValue];
-    BOOL p2JustMoveTo = [[[secondCoords objectAtIndex:self.coordinatesIdx] objectAtIndex:2] boolValue];
-    BOOL p3JustMoveTo = [[[thirdCoords objectAtIndex:self.coordinatesIdx] objectAtIndex:2] boolValue];
-    
-    [self setCoordinatesForLinePath:firstLinePath
-                        coordinates:[firstCoords objectAtIndex:self.coordinatesIdx]
-                        prevCoordinates:[firstCoords objectAtIndex:self.coordinatesIdx - 1]
-                        justMoveTo:p1JustMoveTo];
-    [self setCoordinatesForLinePath:secondLinePath
-                        coordinates:[secondCoords objectAtIndex:self.coordinatesIdx]
-                        prevCoordinates:[secondCoords objectAtIndex:self.coordinatesIdx - 1]
-                        justMoveTo:p2JustMoveTo];
-    [self setCoordinatesForLinePath:thirdLinePath
-                        coordinates:[thirdCoords objectAtIndex:self.coordinatesIdx]
-                        prevCoordinates:[thirdCoords objectAtIndex:self.coordinatesIdx - 1]
-                        justMoveTo:p3JustMoveTo];
-
-    [self.firstPath appendPath:firstLinePath];
-    [self.secondPath appendPath:secondLinePath];
-    [self.thirdPath appendPath:thirdLinePath];
-
     [self strokePaths];
-
-    self.coordinatesIdx++;
 }
 
 - (void)drawWithInterval:(double)interval andCallback:(nonnull void (^)(void))callback {
-    __weak Canvas *weakSelf = self;
-    [NSTimer scheduledTimerWithTimeInterval:interval repeats:YES block:^(NSTimer *timer) {
-        __strong Canvas *strongSelf = weakSelf;
-        
-        if (strongSelf.isDrawingDone) {
-            [timer invalidate];
-            
-            callback();
-        }
-        
-        [strongSelf setNeedsDisplay];
-    }];
+    self.drawInterval = interval;
+    self.drawEndHandler = callback;
+    [self setNeedsDisplay];
 };
 
 -(void)normalizeCoordinates: (NSArray *)coordinatesArray {
@@ -1078,27 +1045,48 @@
 }
 
 -(void)strokePaths {
-    UIColor *firstColor = [self.colors firstObject];
-    UIColor *secondColor = [self.colors objectAtIndex:1];
-    UIColor *thirdColor = [self.colors lastObject];
-
-    [firstColor setStroke];
-    [self.firstPath stroke];
-    [secondColor setStroke];
-    [self.secondPath stroke];
-    [thirdColor setStroke];
-    [self.thirdPath stroke];
+    for (int idx = 0; idx < [self.bezierPaths count]; idx++) {
+        CAShapeLayer *shapeLayer = self.shapeLayers[idx];
+        UIBezierPath *path = self.bezierPaths[idx];
+        
+        shapeLayer.path = path.CGPath;
+        shapeLayer.fillColor = nil;
+        shapeLayer.strokeEnd = 0;
+        
+        [self.layer addSublayer:shapeLayer];
+    }
+    
+    
+    __block CGFloat strokeValue = 0;
+    [NSTimer scheduledTimerWithTimeInterval:0.0166 repeats:YES block:^(NSTimer *timer) {
+        if (strokeValue > 1) {
+            [timer invalidate];
+            self.drawEndHandler();
+            
+            return;
+        }
+        
+        for (int idx = 0; idx < [self.shapeLayers count]; idx++) {
+            UIColor *color = self.colors[idx];
+            CAShapeLayer *shapeLayer = self.shapeLayers[idx];
+            shapeLayer.strokeColor = color.CGColor;
+            shapeLayer.strokeEnd += self.drawInterval;
+        }
+        
+        strokeValue += self.drawInterval;
+    }];
 }
 
 -(void)resetPaths {
-    [self.firstPath removeAllPoints];
-    [self.secondPath removeAllPoints];
-    [self.thirdPath removeAllPoints];
+    [self.bezierPaths enumerateObjectsUsingBlock:^(UIBezierPath *path, NSUInteger idx, BOOL *stop) {
+        [path removeAllPoints];
+        self.shapeLayers[idx].path = nil;
+        self.shapeLayers[idx].strokeEnd = 0;
+    }];
     
     self.coordinatesIdx = 1;
     self.reset = NO;
     self.isCoordinatesNormalized = NO;
-    self.isDrawingDone = NO;
 }
 
 - (UIImage *)takeSnapshot {

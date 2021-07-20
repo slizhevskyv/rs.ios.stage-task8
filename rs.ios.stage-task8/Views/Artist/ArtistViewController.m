@@ -205,10 +205,10 @@ typedef enum {
     self.canvas.templateName = self.currentDrawing;
     
     
-    double timeInterval = (double)1/60 * (double)self.timerValue;
+    double drawInterval = (double)1/(60 * (double)self.timerValue);
 
     self.state = draw;
-    [self.canvas drawWithInterval:timeInterval andCallback:^{
+    [self.canvas drawWithInterval:drawInterval andCallback:^{
         self.state = done;
     }];
 }

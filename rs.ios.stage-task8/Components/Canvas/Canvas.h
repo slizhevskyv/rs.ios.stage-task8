@@ -14,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray<UIColor *> *colors;
 @property (nonatomic, copy) NSString *templateName;
 @property (nonatomic, assign) BOOL isReadyToDraw;
-@property (nonatomic, assign, readonly) BOOL isDrawingDone;
 @property (nonatomic, assign) BOOL reset;
 
 -(UIImage *)takeSnapshot;
