@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E92F47C126A1BFB600B14097 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47C026A1BFB600B14097 /* AppDelegate.m */; };
+		E92F47C426A1BFB600B14097 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47C326A1BFB600B14097 /* SceneDelegate.m */; };
+		E92F47CC26A1BFB700B14097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92F47CB26A1BFB700B14097 /* Assets.xcassets */; };
+		E92F47CF26A1BFB700B14097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92F47CD26A1BFB700B14097 /* LaunchScreen.storyboard */; };
+		E92F47D226A1BFB700B14097 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47D126A1BFB700B14097 /* main.m */; };
+		E92F47DD26A1C1C600B14097 /* ArtistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47DC26A1C1C600B14097 /* ArtistViewController.m */; };
+		E92F47E126A1C5A200B14097 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E92F47DF26A1C5A200B14097 /* Montserrat-Regular.ttf */; };
+		E92F47E226A1C5A200B14097 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E92F47E026A1C5A200B14097 /* Montserrat-Medium.ttf */; };
+		E92F47E626A1E24300B14097 /* UILabel+WithTitleAndColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47E526A1E24300B14097 /* UILabel+WithTitleAndColor.m */; };
+		E92F47E926A1E37600B14097 /* UIColor+WithPalleteColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47E826A1E37600B14097 /* UIColor+WithPalleteColors.m */; };
+		E92F47EE26A2060D00B14097 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = E92F47ED26A2060D00B14097 /* Button.m */; };
+		E9918B7626A5C04D00BC5A72 /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = E9918B7526A5C04D00BC5A72 /* NSMutableArray+Shuffle.m */; };
+		E9F302C126A32B780066886D /* DrawingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F302C026A32B780066886D /* DrawingsViewController.m */; };
+		E9F81A2D26A43E8D00E3D6D3 /* ModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A2C26A43E8D00E3D6D3 /* ModalPresentationController.m */; };
+		E9F81A3126A440BB00E3D6D3 /* PaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A3026A440BB00E3D6D3 /* PaletteViewController.m */; };
+		E9F81A3526A4463500E3D6D3 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A3426A4463500E3D6D3 /* ModalViewController.m */; };
+		E9F81A3926A4473A00E3D6D3 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A3826A4473A00E3D6D3 /* ColorButton.m */; };
+		E9F81A3C26A449A300E3D6D3 /* UIButton+SetColoredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A3B26A449A300E3D6D3 /* UIButton+SetColoredImage.m */; };
+		E9F81A4026A497A400E3D6D3 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A3F26A497A400E3D6D3 /* TimerViewController.m */; };
+		E9F81A4426A4AAF100E3D6D3 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F81A4326A4AAF100E3D6D3 /* Canvas.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E92F47BC26A1BFB600B14097 /* rs.ios.stage-task8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rs.ios.stage-task8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92F47BF26A1BFB600B14097 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E92F47C026A1BFB600B14097 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E92F47C226A1BFB600B14097 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E92F47C326A1BFB600B14097 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E92F47CB26A1BFB700B14097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E92F47CE26A1BFB700B14097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E92F47D026A1BFB700B14097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E92F47D126A1BFB700B14097 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E92F47DB26A1C1C600B14097 /* ArtistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtistViewController.h; sourceTree = "<group>"; };
+		E92F47DC26A1C1C600B14097 /* ArtistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistViewController.m; sourceTree = "<group>"; };
+		E92F47DF26A1C5A200B14097 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E92F47E026A1C5A200B14097 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		E92F47E426A1E24300B14097 /* UILabel+WithTitleAndColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+WithTitleAndColor.h"; sourceTree = "<group>"; };
+		E92F47E526A1E24300B14097 /* UILabel+WithTitleAndColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WithTitleAndColor.m"; sourceTree = "<group>"; };
+		E92F47E726A1E37600B14097 /* UIColor+WithPalleteColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+WithPalleteColors.h"; sourceTree = "<group>"; };
+		E92F47E826A1E37600B14097 /* UIColor+WithPalleteColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WithPalleteColors.m"; sourceTree = "<group>"; };
+		E92F47EC26A2060D00B14097 /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		E92F47ED26A2060D00B14097 /* Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		E9918B7426A5C04D00BC5A72 /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
+		E9918B7526A5C04D00BC5A72 /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
+		E9F302BF26A32B780066886D /* DrawingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingsViewController.h; sourceTree = "<group>"; };
+		E9F302C026A32B780066886D /* DrawingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawingsViewController.m; sourceTree = "<group>"; };
+		E9F81A2B26A43E8D00E3D6D3 /* ModalPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalPresentationController.h; sourceTree = "<group>"; };
+		E9F81A2C26A43E8D00E3D6D3 /* ModalPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalPresentationController.m; sourceTree = "<group>"; };
+		E9F81A2F26A440BB00E3D6D3 /* PaletteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaletteViewController.h; sourceTree = "<group>"; };
+		E9F81A3026A440BB00E3D6D3 /* PaletteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaletteViewController.m; sourceTree = "<group>"; };
+		E9F81A3326A4463500E3D6D3 /* ModalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		E9F81A3426A4463500E3D6D3 /* ModalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		E9F81A3726A4473A00E3D6D3 /* ColorButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
+		E9F81A3826A4473A00E3D6D3 /* ColorButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		E9F81A3A26A449A300E3D6D3 /* UIButton+SetColoredImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetColoredImage.h"; sourceTree = "<group>"; };
+		E9F81A3B26A449A300E3D6D3 /* UIButton+SetColoredImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetColoredImage.m"; sourceTree = "<group>"; };
+		E9F81A3E26A497A400E3D6D3 /* TimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		E9F81A3F26A497A400E3D6D3 /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		E9F81A4226A4AAF100E3D6D3 /* Canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		E9F81A4326A4AAF100E3D6D3 /* Canvas.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Canvas.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E92F47B926A1BFB600B14097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E92F47B326A1BFB600B14097 = {
+			isa = PBXGroup;
+			children = (
+				E92F47BE26A1BFB600B14097 /* rs.ios.stage-task8 */,
+				E92F47BD26A1BFB600B14097 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E92F47BD26A1BFB600B14097 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47BC26A1BFB600B14097 /* rs.ios.stage-task8.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E92F47BE26A1BFB600B14097 /* rs.ios.stage-task8 */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47EA26A205BD00B14097 /* Components */,
+				E92F47E326A1E20C00B14097 /* Categories */,
+				E92F47DE26A1C59500B14097 /* Resources */,
+				E92F47D926A1C18900B14097 /* Views */,
+				E92F47D826A1C17D00B14097 /* App */,
+				E92F47CB26A1BFB700B14097 /* Assets.xcassets */,
+				E92F47CD26A1BFB700B14097 /* LaunchScreen.storyboard */,
+				E92F47D026A1BFB700B14097 /* Info.plist */,
+				E92F47D126A1BFB700B14097 /* main.m */,
+			);
+			path = "rs.ios.stage-task8";
+			sourceTree = "<group>";
+		};
+		E92F47D826A1C17D00B14097 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47BF26A1BFB600B14097 /* AppDelegate.h */,
+				E92F47C026A1BFB600B14097 /* AppDelegate.m */,
+				E92F47C226A1BFB600B14097 /* SceneDelegate.h */,
+				E92F47C326A1BFB600B14097 /* SceneDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E92F47D926A1C18900B14097 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A3D26A4979000E3D6D3 /* Timer */,
+				E9F81A2E26A440A500E3D6D3 /* Palette */,
+				E9F302BE26A32B600066886D /* Drawings */,
+				E92F47DA26A1C1AB00B14097 /* Artist */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E92F47DA26A1C1AB00B14097 /* Artist */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47DB26A1C1C600B14097 /* ArtistViewController.h */,
+				E92F47DC26A1C1C600B14097 /* ArtistViewController.m */,
+			);
+			path = Artist;
+			sourceTree = "<group>";
+		};
+		E92F47DE26A1C59500B14097 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47E026A1C5A200B14097 /* Montserrat-Medium.ttf */,
+				E92F47DF26A1C5A200B14097 /* Montserrat-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E92F47E326A1E20C00B14097 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47E426A1E24300B14097 /* UILabel+WithTitleAndColor.h */,
+				E92F47E526A1E24300B14097 /* UILabel+WithTitleAndColor.m */,
+				E92F47E726A1E37600B14097 /* UIColor+WithPalleteColors.h */,
+				E92F47E826A1E37600B14097 /* UIColor+WithPalleteColors.m */,
+				E9F81A3A26A449A300E3D6D3 /* UIButton+SetColoredImage.h */,
+				E9F81A3B26A449A300E3D6D3 /* UIButton+SetColoredImage.m */,
+				E9918B7426A5C04D00BC5A72 /* NSMutableArray+Shuffle.h */,
+				E9918B7526A5C04D00BC5A72 /* NSMutableArray+Shuffle.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E92F47EA26A205BD00B14097 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A4126A4AAE000E3D6D3 /* Canvas */,
+				E9F81A3626A4471B00E3D6D3 /* ColorButton */,
+				E9F81A3226A4461A00E3D6D3 /* ModalViewController */,
+				E9F81A2A26A43DF900E3D6D3 /* ModalPresentationController */,
+				E92F47EB26A205CA00B14097 /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E92F47EB26A205CA00B14097 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				E92F47EC26A2060D00B14097 /* Button.h */,
+				E92F47ED26A2060D00B14097 /* Button.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		E9F302BE26A32B600066886D /* Drawings */ = {
+			isa = PBXGroup;
+			children = (
+				E9F302BF26A32B780066886D /* DrawingsViewController.h */,
+				E9F302C026A32B780066886D /* DrawingsViewController.m */,
+			);
+			path = Drawings;
+			sourceTree = "<group>";
+		};
+		E9F81A2A26A43DF900E3D6D3 /* ModalPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A2B26A43E8D00E3D6D3 /* ModalPresentationController.h */,
+				E9F81A2C26A43E8D00E3D6D3 /* ModalPresentationController.m */,
+			);
+			path = ModalPresentationController;
+			sourceTree = "<group>";
+		};
+		E9F81A2E26A440A500E3D6D3 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A2F26A440BB00E3D6D3 /* PaletteViewController.h */,
+				E9F81A3026A440BB00E3D6D3 /* PaletteViewController.m */,
+			);
+			path = Palette;
+			sourceTree = "<group>";
+		};
+		E9F81A3226A4461A00E3D6D3 /* ModalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A3326A4463500E3D6D3 /* ModalViewController.h */,
+				E9F81A3426A4463500E3D6D3 /* ModalViewController.m */,
+			);
+			path = ModalViewController;
+			sourceTree = "<group>";
+		};
+		E9F81A3626A4471B00E3D6D3 /* ColorButton */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A3726A4473A00E3D6D3 /* ColorButton.h */,
+				E9F81A3826A4473A00E3D6D3 /* ColorButton.m */,
+			);
+			path = ColorButton;
+			sourceTree = "<group>";
+		};
+		E9F81A3D26A4979000E3D6D3 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A3E26A497A400E3D6D3 /* TimerViewController.h */,
+				E9F81A3F26A497A400E3D6D3 /* TimerViewController.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		E9F81A4126A4AAE000E3D6D3 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				E9F81A4226A4AAF100E3D6D3 /* Canvas.h */,
+				E9F81A4326A4AAF100E3D6D3 /* Canvas.m */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E92F47BB26A1BFB600B14097 /* rs.ios.stage-task8 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E92F47D526A1BFB700B14097 /* Build configuration list for PBXNativeTarget "rs.ios.stage-task8" */;
+			buildPhases = (
+				E92F47B826A1BFB600B14097 /* Sources */,
+				E92F47B926A1BFB600B14097 /* Frameworks */,
+				E92F47BA26A1BFB600B14097 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "rs.ios.stage-task8";
+			productName = "rs.ios.stage-task8";
+			productReference = E92F47BC26A1BFB600B14097 /* rs.ios.stage-task8.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E92F47B426A1BFB600B14097 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E92F47BB26A1BFB600B14097 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = E92F47B726A1BFB600B14097 /* Build configuration list for PBXProject "rs.ios.stage-task8" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E92F47B326A1BFB600B14097;
+			productRefGroup = E92F47BD26A1BFB600B14097 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E92F47BB26A1BFB600B14097 /* rs.ios.stage-task8 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E92F47BA26A1BFB600B14097 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E92F47E126A1C5A200B14097 /* Montserrat-Regular.ttf in Resources */,
+				E92F47CF26A1BFB700B14097 /* LaunchScreen.storyboard in Resources */,
+				E92F47E226A1C5A200B14097 /* Montserrat-Medium.ttf in Resources */,
+				E92F47CC26A1BFB700B14097 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E92F47B826A1BFB600B14097 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9F81A2D26A43E8D00E3D6D3 /* ModalPresentationController.m in Sources */,
+				E92F47C126A1BFB600B14097 /* AppDelegate.m in Sources */,
+				E9F81A4026A497A400E3D6D3 /* TimerViewController.m in Sources */,
+				E9F81A3C26A449A300E3D6D3 /* UIButton+SetColoredImage.m in Sources */,
+				E9F302C126A32B780066886D /* DrawingsViewController.m in Sources */,
+				E9918B7626A5C04D00BC5A72 /* NSMutableArray+Shuffle.m in Sources */,
+				E92F47EE26A2060D00B14097 /* Button.m in Sources */,
+				E9F81A3126A440BB00E3D6D3 /* PaletteViewController.m in Sources */,
+				E9F81A3526A4463500E3D6D3 /* ModalViewController.m in Sources */,
+				E9F81A4426A4AAF100E3D6D3 /* Canvas.m in Sources */,
+				E92F47E926A1E37600B14097 /* UIColor+WithPalleteColors.m in Sources */,
+				E9F81A3926A4473A00E3D6D3 /* ColorButton.m in Sources */,
+				E92F47D226A1BFB700B14097 /* main.m in Sources */,
+				E92F47E626A1E24300B14097 /* UILabel+WithTitleAndColor.m in Sources */,
+				E92F47C426A1BFB600B14097 /* SceneDelegate.m in Sources */,
+				E92F47DD26A1C1C600B14097 /* ArtistViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E92F47CD26A1BFB700B14097 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E92F47CE26A1BFB700B14097 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E92F47D326A1BFB700B14097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E92F47D426A1BFB700B14097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E92F47D626A1BFB700B14097 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSCCGM92FS;
+				INFOPLIST_FILE = "rs.ios.stage-task8/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slizhevskyv.rs-ios-stage-task8";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E92F47D726A1BFB700B14097 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSCCGM92FS;
+				INFOPLIST_FILE = "rs.ios.stage-task8/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.slizhevskyv.rs-ios-stage-task8";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E92F47B726A1BFB600B14097 /* Build configuration list for PBXProject "rs.ios.stage-task8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E92F47D326A1BFB700B14097 /* Debug */,
+				E92F47D426A1BFB700B14097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E92F47D526A1BFB700B14097 /* Build configuration list for PBXNativeTarget "rs.ios.stage-task8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E92F47D626A1BFB700B14097 /* Debug */,
+				E92F47D726A1BFB700B14097 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E92F47B426A1BFB600B14097 /* Project object */;
+}
